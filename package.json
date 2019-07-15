@@ -1,0 +1,19 @@
+{
+  "name": "xiaohongshu-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WalktheChat/xiaohongshu-node.git"
+  },
+  "author": "Camille Benhamou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WalktheChat/xiaohongshu-node/issues"
+  },
+  "homepage": "https://github.com/WalktheChat/xiaohongshu-node#readme"
+}
