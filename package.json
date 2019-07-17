@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "files": [
+    "resources",
+    "mixins",
+    "index.js",
+    "index.d.ts"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +24,13 @@
   "bugs": {
     "url": "https://github.com/WalktheChat/xiaohongshu-node/issues"
   },
-  "homepage": "https://github.com/WalktheChat/xiaohongshu-node#readme"
+  "homepage": "https://github.com/WalktheChat/xiaohongshu-node#readme",
+  "devDependencies": {
+    "pre-commit": "^1.2.2",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "got": "^9.6.0",
+    "lodash": "^4.17.14"
+  }
 }
