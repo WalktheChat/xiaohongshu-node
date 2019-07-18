@@ -3,7 +3,7 @@ const camelCase = require('lodash/camelCase');
 const defaults = require('lodash/defaults');
 const assign = require('lodash/assign');
 const path = require('path');
-const Request = require('request-promise-native');
+const got = require('got');
 const fs = require('fs');
 
 const pkg = require('./package');
@@ -77,7 +77,7 @@ Xiaohongshu.prototype.request = function request(method, url, version, resource,
     options.body = body;
   }
 
-  return Request(options).then(res => {
+  return got(options).then(res => {
     const responseBody = res.body;
     if (responseBody && responseBody.body.data && responseBody.body.success) {
       responseBody = responseBody.data;

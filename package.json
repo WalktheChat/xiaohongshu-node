@@ -30,9 +30,8 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "lodash": "^4.17.14",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.7"
+    "got": "^9.6.0",
+    "lodash": "^4.17.14"
   },
   "directories": {
     "test": "test"
