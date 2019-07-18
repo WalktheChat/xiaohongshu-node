@@ -79,8 +79,8 @@ Xiaohongshu.prototype.request = function request(method, url, version, resource,
 
   return got(options)
     .then(res => {
-      const responseBody = res.body;
-      if (responseBody && responseBody.body.data && responseBody.body.success) {
+      let responseBody = res.body;
+      if (responseBody && responseBody.data && responseBody.success) {
         responseBody = responseBody.data;
         return responseBody || {};
       } else {
