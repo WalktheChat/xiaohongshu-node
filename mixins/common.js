@@ -30,7 +30,7 @@ const common = {
   * Sign url with params.
   *
   * @param {String} url base url
-  * @param {String} params parameters to happen with url
+  * @param {String} params parameters to append to url
   * @param {String} md5Key key to sign
   * @return {String} MD5 signature
   * @private

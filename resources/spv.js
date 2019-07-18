@@ -13,7 +13,7 @@ const common = require('../mixins/common');
  */
 function Spv(xiaohongshu) {
   this.xiaohongshu = xiaohongshu;
-  this.resource = 'spv';
+  this.resourceName = 'spv';
   this.version = 'v1'
 }
 
@@ -42,7 +42,7 @@ Spv.prototype.create = function create(splId, body) {
  * @public
  */
 Spv.prototype.update = function update(spvId, body) {
-  this.resource += `/${spvId}`;
+  this.resource = `${this.resourceName}/${spvId}`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('PUT', url, this.version, this.resource, {}, body);
 };
@@ -56,7 +56,7 @@ Spv.prototype.update = function update(spvId, body) {
  * @public
  */
 Spv.prototype.update = function update(spvId, body) {
-  this.resource += `/${spvId}/customs`;
+  this.resource = `${this.resourceName}/${spvId}/customs`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('PUT', url, this.version, this.resource, {}, body);
 };

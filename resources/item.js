@@ -13,7 +13,7 @@ const common = require('../mixins/common');
  */
 function Item(xiaohongshu) {
   this.xiaohongshu = xiaohongshu;
-  this.resource = 'item';
+  this.resourceName = 'item';
   this.version = 'v1'
 }
 
@@ -28,7 +28,7 @@ assign(Item.prototype, pick(common, ['buildUrl']));
  * @public
  */
 Item.prototype.create = function create(spvId, body) {
-  this.resource = `spv/${spvId}/item`;
+  this.resource = `spv/${spvId}/${this.resourceName}`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('POST', url, this.version, this.resource, {}, body);
 };
@@ -42,7 +42,7 @@ Item.prototype.create = function create(spvId, body) {
  * @public
  */
 Item.prototype.update = function update(itemId, body) {
-  this.resource += `/${itemId}`;
+  this.resource = `${this.resourceName}/${itemId}`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('PUT', url, this.version, this.resource, {}, body);
 };
@@ -56,7 +56,7 @@ Item.prototype.update = function update(itemId, body) {
  * @public
  */
 Item.prototype.updateLogistics = function updateLogistics(itemId, body) {
-  this.resource += `/${itemId}/logistics`;
+  this.resource = `${this.resourceName}/${itemId}/logistics`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('PUT', url, this.version, this.resource, {}, body);
 };
@@ -70,7 +70,7 @@ Item.prototype.updateLogistics = function updateLogistics(itemId, body) {
  * @public
  */
 Item.prototype.updateAvailability = function updateAvailability(itemId, body) {
-  this.resource += `/${itemId}/availability`;
+  this.resource = `${this.resourceName}/${itemId}/availability`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('PUT', url, this.version, this.resource, {}, body);
 };

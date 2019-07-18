@@ -13,7 +13,7 @@ const common = require('../mixins/common');
  */
 function Spu(xiaohongshu) {
   this.xiaohongshu = xiaohongshu;
-  this.resource = 'spu';
+  this.resourceName = 'spu';
   this.version = 'v1'
 }
 
@@ -27,6 +27,7 @@ assign(Spu.prototype, pick(common, ['buildUrl']));
  * @public
  */
 Spu.prototype.create = function create(body) {
+  this.resource = `${this.resourceName}`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('POST', url, this.version, this.resource, {}, body);
 };
@@ -40,7 +41,7 @@ Spu.prototype.create = function create(body) {
  * @public
  */
 Spu.prototype.update = function update(spuId, body) {
-  this.resource += `/${spuId}`;
+  this.resource = `${this.resourceName}/${spuId}`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('PUT', url, this.version, this.resource, {}, body);
 };
@@ -54,7 +55,7 @@ Spu.prototype.update = function update(spuId, body) {
  * @public
  */
 Spu.prototype.get = function get(spuId, query) {
-  this.resource += `/${spuId}`;
+  this.resource = `${this.resourceName}/${spuId}`;
   const url = this.buildUrl(query);
   return this.xiaohongshu.request('GET', url, this.version, this.resource, query, null);
 };

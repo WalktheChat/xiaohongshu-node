@@ -13,7 +13,7 @@ const common = require('../mixins/common');
  */
 function Package(xiaohongshu) {
   this.xiaohongshu = xiaohongshu;
-  this.resource = 'packages';
+  this.resourceName = 'packages';
   this.version = 'v0'
 }
 
@@ -27,7 +27,7 @@ assign(Package.prototype, pick(common, ['buildUrl']));
  * @public
  */
 Package.prototype.getLastest = function getLastest(query) {
-  this.resource += `/latest_packages`;
+  this.resource = `${this.resourceName}/latest_packages`;
   const url = this.buildUrl(query);
   return this.xiaohongshu.request('GET', url, this.version, this.resource, query, null);
 };
@@ -40,7 +40,7 @@ Package.prototype.getLastest = function getLastest(query) {
  * @public
  */
 Package.prototype.getStatus = function getStatus(query) {
-  this.resource += `/packages_status`;
+  this.resource = `${this.resourceName}/packages_status`;
   const url = this.buildUrl(query);
   return this.xiaohongshu.request('GET', url, this.version, this.resource, query, null);
 };
@@ -53,6 +53,7 @@ Package.prototype.getStatus = function getStatus(query) {
  * @public
  */
 Package.prototype.getList = function getList(query) {
+  this.resource = `${this.resourceName}`;
   const url = this.buildUrl(query);
   return this.xiaohongshu.request('GET', url, this.version, this.resource, query, null);
 };
@@ -65,7 +66,7 @@ Package.prototype.getList = function getList(query) {
  * @public
  */
 Package.prototype.get = function get(packageId) {
-  this.resource += `/${packageId}`;
+  this.resource = `${this.resourceName}/${packageId}`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('GET', url, this.version, this.resource, {}, null);
 };
@@ -79,7 +80,7 @@ Package.prototype.get = function get(packageId) {
  * @public
  */
 Package.prototype.updateShipping = function updateShipping(packageId, body) {
-  this.resource += `/${packageId}`;
+  this.resource = `${this.resourceName}/${packageId}`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('PUT', url, this.version, this.resource, {}, body);
 };
@@ -92,7 +93,7 @@ Package.prototype.updateShipping = function updateShipping(packageId, body) {
  * @public
  */
 Package.prototype.createBatch = function createBatch(body) {
-  this.resource += `/transfer_batches`;
+  this.resource = `${this.resourceName}/transfer_batches`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('POST', url, this.version, this.resource, {}, body);
 };
@@ -106,7 +107,7 @@ Package.prototype.createBatch = function createBatch(body) {
  * @public
  */
 Package.prototype.updateBatch = function updateBatch(batchNo, body) {
-  this.resource += `transfer_batches/${batchNo}`;
+  this.resource = `${this.resourceName}/transfer_batches/${batchNo}`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('PUT', url, this.version, this.resource, {}, body);
 };
@@ -119,7 +120,7 @@ Package.prototype.updateBatch = function updateBatch(batchNo, body) {
  * @public
  */
 Package.prototype.updateCancelled = function updateCancelled(body) {
-  this.resource += `canceling/audit`;
+  this.resource = `${this.resourceName}/canceling/audit`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('PUT', url, this.version, this.resource, {}, body);
 };
@@ -132,7 +133,7 @@ Package.prototype.updateCancelled = function updateCancelled(body) {
  * @public
  */
 Package.prototype.getlistCancelled = function getlistCancelled(query) {
-  this.resource += `canceling/list`;
+  this.resource = `${this.resourceName}/canceling/list`;
   const url = this.buildUrl(query);
   return this.xiaohongshu.request('GET', url, this.version, this.resource, query, null);
 };
