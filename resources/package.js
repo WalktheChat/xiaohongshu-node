@@ -2,7 +2,7 @@
 
 const assign = require('lodash/assign');
 const pick = require('lodash/pick');
-const base = require('../mixins/base');
+const common = require('../mixins/common');
 
 /**
  * Creates a PACKAGE instance.
@@ -17,7 +17,7 @@ function Package(xiaohongshu) {
   this.version = 'v0'
 }
 
-assign(Package.prototype, pick(base, ['buildUrl']));
+assign(Package.prototype, pick(common, ['buildUrl']));
 
 /**
  * Gets lastest PACKAGES.

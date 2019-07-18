@@ -36,7 +36,7 @@ function Xiaohongshu(options) {
   this.baseUrl = {
     protocol: 'http://',
     hostname: 'flssandbox.xiaohongshu.com',
-    defaultSegment: '/ark/open_api'
+    defaultSegment: '/ark/open_api/'
   };
 }
 
@@ -77,17 +77,21 @@ Xiaohongshu.prototype.request = function request(method, url, version, resource,
     options.body = body;
   }
 
-  return got(options).then(res => {
-    const responseBody = res.body;
-    if (responseBody && responseBody.body.data && responseBody.body.success) {
-      responseBody = responseBody.data;
-      return responseBody || {};
-    } else {
-      throw responseBody;
-    }
-  }, err => {
-    return Promise.reject(err);
-  });
+  return got(options)
+    .then(res => {
+      const responseBody = res.body;
+      if (responseBody && responseBody.body.data && responseBody.body.success) {
+        responseBody = responseBody.data;
+        return responseBody || {};
+      } else {
+        throw responseBody;
+      }
+    }).catch(err => {
+      if (err.body) {
+        err = err.body;
+      }
+      return err;
+    });
 };
 
 

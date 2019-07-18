@@ -26,8 +26,7 @@
   },
   "homepage": "https://github.com/WalktheChat/xiaohongshu-node#readme",
   "devDependencies": {
-    "pre-commit": "^1.2.2",
-    "typescript": "^3.5.3"
+    "pre-commit": "^1.2.2"
   },
   "dependencies": {
     "got": "^9.6.0",

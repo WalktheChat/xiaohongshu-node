@@ -2,7 +2,7 @@
 
 const assign = require('lodash/assign');
 const pick = require('lodash/pick');
-const base = require('../mixins/base');
+const common = require('../mixins/common');
 
 /**
  * Creates a ITEM instance.
@@ -17,7 +17,7 @@ function Item(xiaohongshu) {
   this.version = 'v1'
 }
 
-assign(Item.prototype, pick(base, ['buildUrl']));
+assign(Item.prototype, pick(common, ['buildUrl']));
 
 /**
  * Creates a ITEM.

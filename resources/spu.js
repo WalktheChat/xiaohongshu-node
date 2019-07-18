@@ -2,7 +2,7 @@
 
 const assign = require('lodash/assign');
 const pick = require('lodash/pick');
-const base = require('../mixins/base');
+const common = require('../mixins/common');
 
 /**
  * Creates a SPU instance.
@@ -17,7 +17,7 @@ function Spu(xiaohongshu) {
   this.version = 'v1'
 }
 
-assign(Spu.prototype, pick(base, ['buildUrl']));
+assign(Spu.prototype, pick(common, ['buildUrl']));
 
 /**
  * Creates a SPU.

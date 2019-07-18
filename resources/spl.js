@@ -2,7 +2,7 @@
 
 const assign = require('lodash/assign');
 const pick = require('lodash/pick');
-const base = require('../mixins/base');
+const common = require('../mixins/common');
 
 /**
  * Creates a SPL instance.
@@ -17,7 +17,7 @@ function Spl(xiaohongshu) {
   this.version = 'v1'
 }
 
-assign(Spl.prototype, pick(base, ['buildUrl']));
+assign(Spl.prototype, pick(common, ['buildUrl']));
 
 /**
  * Creates a SPL.

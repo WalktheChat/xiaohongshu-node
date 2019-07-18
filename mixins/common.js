@@ -3,7 +3,7 @@
 const crypto = require('crypto');
 
 /**
- * This provides methods used by other resources.
+ * This provides methods used by other resources
  *
  * @mixin
  */
@@ -25,6 +25,16 @@ const common = {
       .update(data).digest('hex');
     return digest;
   },
+
+  /**
+  * Sign url with params.
+  *
+  * @param {String} url base url
+  * @param {String} params parameters to happen with url
+  * @param {String} md5Key key to sign
+  * @return {String} MD5 signature
+  * @private
+  */
   signUrlMD5(url, params, md5Key) {
     let signParamsString = common.encodeUri(params, true);
     signParamsString += md5Key;
@@ -32,6 +42,25 @@ const common = {
     let signature = common.getHash(url, 'md5');
     return signature;
   },
+
+  /**
+  * Builds the request URL.
+  *
+  * @param {Object} query Query parameters
+  * @return {String} URL
+  * @private
+  */
+  buildUrl(query) {
+    let path = `/${this.resource}`
+      .replace(/\/+/g, '/')
+      .replace(/\/$/, '');
+
+    if (query) {
+      path += '?' + qs.stringify(query, { arrayFormat: 'brackets' });
+    }
+    let url = `${this.xiaohongshu.baseUrl.protocol}${this.xiaohongshu.baseUrl.hostname}${this.xiaohongshu.baseUrl.defaultSegment}${this.version}${path}`
+    return url;
+  }
 
 };
 

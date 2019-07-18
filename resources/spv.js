@@ -2,7 +2,7 @@
 
 const assign = require('lodash/assign');
 const pick = require('lodash/pick');
-const base = require('../mixins/base');
+const common = require('../mixins/common');
 
 /**
  * Creates a SPV instance.
@@ -17,7 +17,7 @@ function Spv(xiaohongshu) {
   this.version = 'v1'
 }
 
-assign(Spv.prototype, pick(base, ['buildUrl']));
+assign(Spv.prototype, pick(common, ['buildUrl']));
 
 /**
  * Creates a SPV.
