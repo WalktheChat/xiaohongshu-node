@@ -99,7 +99,7 @@ const base = {
     if (query) {
       path += '?' + qs.stringify(query, { arrayFormat: 'brackets' });
     }
-    let url = `${this.xiaohongshu.baseUrl.protocol}${this.xiaohongshu.baseUrl.hostname}${this.xiaohongshu.baseUrl.defaultSegment}/${this.version}/${path}`
+    let url = `${this.xiaohongshu.baseUrl.protocol}${this.xiaohongshu.baseUrl.hostname}${this.xiaohongshu.baseUrl.defaultSegment}/${this.version}${path}`
     return url;
   }
 };

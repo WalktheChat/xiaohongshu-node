@@ -26,10 +26,10 @@ const common = {
     return digest;
   },
   signUrlMD5(url, params, md5Key) {
-    let signParamsString = encodeQueryData(params, true);
+    let signParamsString = common.encodeUri(params, true);
     signParamsString += md5Key;
     url += `?${signParamsString}`;
-    let signature = getHash(url, 'md5');
+    let signature = common.getHash(url, 'md5');
     return signature;
   },
 

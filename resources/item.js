@@ -55,7 +55,7 @@ Item.prototype.update = function update(itemId, body) {
  * @return {Promise} Promise that resolves with the result
  * @public
  */
-Item.prototype.update = function update(itemId, body) {
+Item.prototype.updateLogistics = function updateLogistics(itemId, body) {
   this.resource += `/${itemId}/logistics`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('PUT', url, this.version, this.resource, {}, body);
@@ -69,7 +69,7 @@ Item.prototype.update = function update(itemId, body) {
  * @return {Promise} Promise that resolves with the result
  * @public
  */
-Item.prototype.update = function update(itemId, body) {
+Item.prototype.updateAvailability = function updateAvailability(itemId, body) {
   this.resource += `/${itemId}/availability`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('PUT', url, this.version, this.resource, {}, body);
@@ -95,7 +95,7 @@ Item.prototype.getListLite = function getListLite(query) {
  * @return {Promise} Promise that resolves with the result
  * @public
  */
-Item.prototype.getList = function getListLite(query) {
+Item.prototype.getList = function getList(query) {
   this.resource = `/items`;
   const url = this.buildUrl(query);
   return this.xiaohongshu.request('GET', url, this.version, this.resource, query, null);
@@ -113,6 +113,35 @@ Item.prototype.get = function get(itemId) {
   this.resource = `/items`;
   const url = this.buildUrl(query);
   return this.xiaohongshu.request('GET', url, this.version, this.resource, query, null);
+};
+
+/**
+ * Gets ITEM INVENTORY.
+ *
+ * @param {String} itemId Record ID
+ * @return {Promise} Promise that resolves with the result
+ * @public
+ */
+Item.prototype.getInventory = function getInventory(itemId) {
+  this.version = "v0"
+  this.resource = `/items/${itemId}`;
+  const url = this.buildUrl();
+  return this.xiaohongshu.request('GET', url, this.version, this.resource, {}, null);
+};
+
+/**
+ * Updates a ITEM INVENTORY.
+ *
+ * @param {String} itemId Record ID
+ * @param {Object} body Body parameters
+ * @return {Promise} Promise that resolves with the result
+ * @public
+ */
+Item.prototype.updateInventory = function updateInventory(itemId, body) {
+  this.version = "v0"
+  this.resource = `/inventories/item/${itemId}`;
+  const url = this.buildUrl();
+  return this.xiaohongshu.request('PUT', url, this.version, this.resource, {}, body);
 };
 
 module.exports = Item;

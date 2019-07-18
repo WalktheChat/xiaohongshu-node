@@ -3,7 +3,7 @@ const camelCase = require('lodash/camelCase');
 const defaults = require('lodash/defaults');
 const assign = require('lodash/assign');
 const path = require('path');
-const got = require('got');
+const Request = require('request-promise-native');
 const fs = require('fs');
 
 const pkg = require('./package');
@@ -34,7 +34,7 @@ function Xiaohongshu(options) {
   this.options = defaults(options, { timeout: 60000 });
 
   this.baseUrl = {
-    protocol: 'https://',
+    protocol: 'http://',
     hostname: 'flssandbox.xiaohongshu.com',
     defaultSegment: '/ark/open_api'
   };
@@ -57,7 +57,6 @@ Xiaohongshu.prototype.request = function request(method, url, version, resource,
     headers: { 'User-Agent': `${pkg.name}/${pkg.version}` },
     timeout: this.options.timeout,
     json: true,
-    retries: 0,
     method,
     url
   };
@@ -78,7 +77,7 @@ Xiaohongshu.prototype.request = function request(method, url, version, resource,
     options.body = body;
   }
 
-  return got(options).then(res => {
+  return Request(options).then(res => {
     const responseBody = res.body;
     if (responseBody && responseBody.body.data && responseBody.body.success) {
       responseBody = responseBody.data;

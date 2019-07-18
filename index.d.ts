@@ -75,7 +75,43 @@ declare class Xiaohongshu {
       ) => Promise<Xiaohongshu.IItems>;
       get: (
         itemId: string,
-      ) => Promise<Xiaohongshu.IItems>;      
+      ) => Promise<Xiaohongshu.IItems>;
+      getInventory: (
+        itemId: string,
+      ) => Promise<any>;
+      updateInventory: (
+        itemId: string,
+        body: any
+      ) => Promise<any>;
+    };
+    package: {
+      getLastest: (
+        query: any
+      ) => Promise<Xiaohongshu.IPackages>;
+      getStatus: (
+        query: any
+      ) => Promise<any>;
+      getlist: (
+        query: any
+      ) => Promise<Xiaohongshu.IPackages>;
+      get: (
+        packageId: string,
+      ) => Promise<Xiaohongshu.IPackage>;
+      updateShipping: (
+        packageId: string,
+        body: any
+      ) => Promise<any>;  
+      createBatch: (
+        body: any
+      ) => Promise<any>;
+      updateBatch: (
+        batchNo: string,
+        body: any
+      ) => Promise<any>;
+      updateCancelled: (
+        body: any
+      ) => Promise<any>;
+      getlistCancelled: () => Promise<any>;
     };
 }
 
@@ -198,4 +234,42 @@ declare namespace Xiaohongshu {
         hits: Isp[]
       }
 
+      interface IPackage {
+        package_id: string;
+        logistics: string;
+        time: number;
+        pay_time: number;
+        confirm_time: number;
+        express_company_code: string;
+        express_company_name: string;
+        express_no: number;
+        status: string;
+        receiver_name: string;
+        receiver_phone: number;
+        receiver_address: string;
+        province: string;
+        city: string;
+        district: string;
+        total_net_weight: number;
+        pay_amount: number;
+        id_number: number;
+        international_express_no: string;
+        delivery_time_preference: string;
+        order_declared_amount: number;
+        paint_marker: string;
+        express_extend_1: string;
+        express_extend_2: string;
+        shipping_fee: number;
+        item_list: any[]
+      }
+
+      interface IPackages {
+        current_page?: number,
+        total_page?: number,
+        page_size?: number,
+        total_num?: number,
+        total_number?: number,
+        packages?: IPackage[]
+        package_list?: IPackage[]
+      }
 }
