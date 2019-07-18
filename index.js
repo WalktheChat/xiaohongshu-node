@@ -63,8 +63,8 @@ Xiaohongshu.prototype.request = function request(method, url, version, resource,
 
   if (this.options.appKey && this.options.appSecret) {
     let timestamp = Math.floor(Date.now() / 1000);
-    options.headers['timestamp'] = this.options.appKey;
-    options.headers['app-key'] = timestamp;
+    options.headers['timestamp'] = timestamp;
+    options.headers['app-key'] = this.options.appKey;
     options.headers['sign'] = signMD5(
       `${this.baseUrl.defaultSegment}${version}${resource}`,
       assign({}, { 'app-key': this.options.appKey, timestamp }, query),
