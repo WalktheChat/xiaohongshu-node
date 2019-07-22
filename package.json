@@ -20,7 +20,7 @@
     "url": "git+https://github.com/WalktheChat/xiaohongshu-node.git"
   },
   "author": "Camille Benhamou",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/WalktheChat/xiaohongshu-node/issues"
   },
