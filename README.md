@@ -5,7 +5,7 @@ Xiaohongshu API bindings for Node.js.
 ## Installation:
 
 ```shell
-$ npm install --save xiaohongshu-node
+$ npm install --save @walkthechat/xiaohongshu-node
 ```
 
 ## API
