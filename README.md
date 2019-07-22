@@ -1,5 +1,3 @@
-# xiaohongshu-node
-
 # Xiaohongshu API Node.js
 
 Xiaohongshu API bindings for Node.js.
