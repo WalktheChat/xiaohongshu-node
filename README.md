@@ -113,7 +113,7 @@ for parameters details.
 
 * [Xiaohongshu school ](https://school.xiaohongshu.com/home "Xiaohongshu school ")
 * [API documentation](https://school.xiaohongshu.com/en/open/quick-start/introduction.html "API documentation")
-* [Article - Xiaohingshu content generation](https://walkthechat.com/taobao-integrates-with-xiaohongshu-to-move-into-content-generation/ "Xiaohingshu content generation")
+* [Article - Xiaohongshu content generation](https://walkthechat.com/taobao-integrates-with-xiaohongshu-to-move-into-content-generation/ "Xiaohongshu content generation")
 * [Article - Word of mouth](https://walkthechat.com/xiaohongshu-little-red-book-fostering-e-commerce-via-word-mouth/ "Word of mouth")
 
 ##  Apps already using Xiaohongshu API node:
