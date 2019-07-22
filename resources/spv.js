@@ -55,7 +55,7 @@ Spv.prototype.update = function update(spvId, body) {
  * @return {Promise} Promise that resolves with the result
  * @public
  */
-Spv.prototype.update = function update(spvId, body) {
+Spv.prototype.updateCustoms = function updateCustoms(spvId, body) {
   this.resource = `${this.resourceName}/${spvId}/customs`;
   const url = this.buildUrl();
   return this.xiaohongshu.request('PUT', url, this.version, this.resource, {}, body);
