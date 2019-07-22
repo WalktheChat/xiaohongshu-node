@@ -105,10 +105,11 @@ xiaohongshu.spu.getList()
   - `getlistCancelled(query)`
   - `updateCancelled(body)`
 
-where `query` and `body` is a plain JavaScript object. See https://school.xiaohongshu.com/en/open/product/item-list.html
+where `query` and `body` are a plain JavaScript object. 
+See https://school.xiaohongshu.com/en/open/product/item-list.html
 for parameters details.
 
-## Become a master of the Xiaohongshu ecosystem by:
+## Become a master of the Xiaohongshu ecosystem:
 
 * [Xiaohongshu school ](https://school.xiaohongshu.com/home "Xiaohongshu school ")
 * [API documentation](https://school.xiaohongshu.com/en/open/quick-start/introduction.html "API documentation")
@@ -121,6 +122,7 @@ for parameters details.
 * [Walkthechat - CMS](https://cms.v3.walkthechat.com "Walkthechat - CMS")
 
 ## Supported by:
+* [Walkthechat](https://walkthechat.com/ "Walkthechat")
 
 ## License
 
