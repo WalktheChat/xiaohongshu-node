@@ -104,6 +104,13 @@ xiaohongshu.spu.getList()
   - `updateBatch(batchNo, body)`
   - `getlistCancelled(query)`
   - `updateCancelled(body)`
+- BRAND
+  - `search(query)`
+- CATEGORY
+  - `getList(query)`
+  - `getVariations(categoryId, query)`
+  - `getAttributeOptions(categoryId)`
+  - `getAttributeValues(attributeId)`
 
 where `query` and `body` are a plain JavaScript object. 
 See https://school.xiaohongshu.com/en/open/product/item-list.html
@@ -115,11 +122,6 @@ for parameters details.
 * [API documentation](https://school.xiaohongshu.com/en/open/quick-start/introduction.html "API documentation")
 * [Article - Xiaohongshu content generation](https://walkthechat.com/taobao-integrates-with-xiaohongshu-to-move-into-content-generation/ "Xiaohongshu content generation")
 * [Article - Word of mouth](https://walkthechat.com/xiaohongshu-little-red-book-fostering-e-commerce-via-word-mouth/ "Word of mouth")
-
-##  Apps already using Xiaohongshu API node:
-
-* [Walkthechat - WeChat Agency - Start leveraging WeChat](https://walkthechat.com/ "Walkthechat - WeChat Agency - Start leveraging WeChat")
-* [Walkthechat - CMS](https://cms.v3.walkthechat.com "Walkthechat - CMS")
 
 ## Supported by:
 * [Walkthechat](https://walkthechat.com/ "Walkthechat")
