@@ -73,3 +73,4 @@ Category.prototype.getAttributeOptions = function getAttributeOptions(attributeI
   return this.xiaohongshu.request('GET', url, this.version, this.resource, query, null);
 };
 
+module.exports = Category;

@@ -31,3 +31,6 @@ Brand.prototype.search = function search(query) {
   const url = this.buildUrl(query);
   return this.xiaohongshu.request('GET', url, this.version, this.resource, query, null);
 };
+
+module.exports = Brand;
+
