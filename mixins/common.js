@@ -1,6 +1,7 @@
 'use strict';
 
 const crypto = require('crypto');
+const qs = require('qs');
 
 /**
  * This provides methods used by other resources
