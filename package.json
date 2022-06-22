@@ -29,7 +29,7 @@
     "pre-commit": "^1.2.2"
   },
   "dependencies": {
-    "got": "^9.6.0",
+    "got": "^11.8.5",
     "lodash": "^4.17.14"
   },
   "directories": {
